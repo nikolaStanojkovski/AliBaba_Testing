@@ -4,10 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import pptech.skitproject.alibabatesting.ui_selenium.BasePage;
 
 import java.util.List;
+import java.util.Objects;
 
 public class HomePage extends BasePage {
 
@@ -24,14 +27,6 @@ public class HomePage extends BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("main-content"))).isDisplayed();
     }
 
-    public boolean isLogged() throws InterruptedException {
-        WebElement element = driver.findElement(By.xpath("//*[@id=\"J_SC_header\"]/header/div[2]/div[4]/div[4]/div/div/div/div[4]/div"));
-        String elementText = element.getText();
-
-        return elementText.equals("you havent login.");
-    }
-
-    // Checkers for elements on page
 
     public boolean getNavigationExistence() { // check if the navigation exists
         try {
@@ -183,7 +178,6 @@ public class HomePage extends BasePage {
     public void searchFor(String text) {
         try {
             driver.manage().window().maximize();
-            // window needs to be full screen in order or load all account icons
             Thread.sleep(1500); // wait until elements are loaded
 
             WebElement searchbar = driver.findElement(By.xpath("//*[@id=\"J_SC_header\"]/header/div[2]/div[3]/div/div/form/div[2]/input"));
@@ -195,6 +189,110 @@ public class HomePage extends BasePage {
             // wait for the requested page to load
         } catch (Exception ignored) {
 
+        }
+    }
+
+
+    public boolean getRegionalSettings() {
+        try {
+            driver.manage().window().maximize();
+            Thread.sleep(1500); // wait until elements are loaded
+
+            Actions action = new Actions(driver);
+            WebElement languageCurrencySection = driver.findElement(By.xpath("/html/body/div[1]/header/div[4]/div/div[4]/div[3]/div/div"));
+            action.moveToElement(languageCurrencySection).build().perform();
+            // hover over the section to make the form to appear
+
+            WebElement regionalSettingsTitle = driver.findElement(By.xpath("//*[@id=\"J_SC_header\"]/header/div[4]/div/div[4]/div[3]/div/div/div[2]/div[1]/b"));
+
+            Thread.sleep(2000);
+            if(regionalSettingsTitle.getText().contains("Regional Settings")) {
+                WebElement languageDropdownList = driver.findElement(By.xpath("/html/body/div[1]/header/div[4]/div/div[4]/div[3]/div/div/div[2]/div[2]/div/div"));
+                WebElement currencyDropdownList = driver.findElement(By.xpath("/html/body/div[1]/header/div[4]/div/div[4]/div[3]/div/div/div[2]/div[3]/div/div"));
+
+                Thread.sleep(2000);
+                action.moveToElement(languageDropdownList).click().build().perform();
+                Thread.sleep(2000); // wait for select to show up
+                driver.findElement(By.xpath("/html/body/div[1]/header/div[4]/div/div[4]/div[3]/div/div/div[2]/div[2]/div/div/div[2]/ul/li/ul/li[2]")).click();
+                Thread.sleep(2000);
+                // wait for language to be saved
+
+                Thread.sleep(2000);
+                action.moveToElement(currencyDropdownList).click().build().perform();
+                Thread.sleep(2000);
+                driver.findElement(By.xpath("/html/body/div[1]/header/div[4]/div/div[4]/div[3]/div/div/div[2]/div[3]/div/div/div[2]/ul/li[1]/ul/li[2]")).click();
+                Thread.sleep(1500);
+                // wait for currency to be saved
+
+                WebElement submitButton = driver.findElement(By.xpath("//*[@id=\"J_SC_header\"]/header/div[4]/div/div[4]/div[3]/div/div/div[2]/div[5]/button"));
+
+                List<String> englishElementsLanguage = findSomeWebElementsTestingLanguage();
+                List<String> dollarElementsCurrency = findSomeWebElementsTestingCurrency();
+                // get some elements before changing language and currency for later check
+
+                submitButton.click();
+                Thread.sleep(5000);
+                // make the language and currency change
+
+                List<String> deutschElementsLanguage = findSomeWebElementsTestingLanguage();
+                List<String> euroElementsCurrency = findSomeWebElementsTestingCurrency();
+                // get some elements for the check
+
+                return makeLanguageCheck(Objects.requireNonNull(englishElementsLanguage), deutschElementsLanguage)
+                        && makeCurrencyCheck(Objects.requireNonNull(dollarElementsCurrency), euroElementsCurrency);
+                // make the language and currency web elements check
+            } else
+                return false;
+        } catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    private boolean makeLanguageCheck(List<String> englishElementsLanguage, List<String> deutschElementsLanguage) {
+        if(!englishElementsLanguage.get(0).equals("MY MARKETS") ||
+                !deutschElementsLanguage.get(0).equals("Meine Märkte"))
+            return false;
+        if(!englishElementsLanguage.get(1).equals("Customized products") ||
+                !deutschElementsLanguage.get(1).equals("Maßgeschneiderte Produkte"))
+            return false;
+        if(!englishElementsLanguage.get(2).equals("Ready-to-ship products") ||
+                !deutschElementsLanguage.get(2).equals("Versandfertige Produkte"))
+            return false;
+        if(!englishElementsLanguage.get(3).equals("What are you looking for...") ||
+                !deutschElementsLanguage.get(3).equals("Wonach suchen Sie?"))
+            return false;
+
+        return true;
+    }
+
+    private boolean makeCurrencyCheck(List<String> dollarElementsCurrency, List<String> euroElementsCurrency) {
+        return dollarElementsCurrency.stream().filter(i -> i.contains("$")).count() == 3
+                && euroElementsCurrency.stream().filter(i -> i.contains("€")).count() == 3;
+        // check if the currencies were changed in the price element
+    }
+
+    private List<String> findSomeWebElementsTestingLanguage() {
+        try {
+            WebElement marketsLink = driver.findElement(By.xpath("/html/body/div[3]/div[2]/div[1]/div[2]/div/div[1]/div[1]/a"));
+            WebElement customizedProductsLink = driver.findElement(By.xpath("/html/body/div[3]/div[2]/div[2]/div[2]/div[1]/div[1]/h3"));
+            WebElement readyToShipProductsLink = driver.findElement(By.xpath("/html/body/div[3]/div[2]/div[2]/div[2]/div[2]/div[1]/h3"));
+            WebElement searchBarPlaceholder = driver.findElement(By.xpath("//*[@id=\"J_SC_header\"]/header/div[2]/div[3]/div/div/form/div[2]/input"));
+
+            return List.of(marketsLink.getText(), customizedProductsLink.getText(), readyToShipProductsLink.getText(), searchBarPlaceholder.getAttribute("placeholder"));
+        } catch (Exception ignored) {
+            return null;
+        }
+    }
+
+    private List<String> findSomeWebElementsTestingCurrency() {
+        try {
+            WebElement product1 = driver.findElement(By.xpath("/html/body/div[3]/div[2]/div[2]/div[1]/div/div[1]/div[2]/div[2]/a[1]/div[2]"));
+            WebElement product2 = driver.findElement(By.xpath("/html/body/div[3]/div[2]/div[2]/div[1]/div/div[1]/div[3]/div[2]/a[2]/div[2]"));
+            WebElement product3 = driver.findElement(By.xpath("/html/body/div[3]/div[2]/div[2]/div[1]/div/div[1]/div[3]/div[2]/a[3]/div[2]"));
+
+            return List.of(product1.getText(), product2.getText(), product3.getText());
+        } catch (Exception ignored) {
+            return null;
         }
     }
 }

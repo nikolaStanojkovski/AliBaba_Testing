@@ -4,8 +4,11 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import pptech.skitproject.alibabatesting.models.TradeRole;
 import pptech.skitproject.alibabatesting.ui_selenium.BasePage;
+
+import java.util.List;
 
 public class RegistrationPage extends BasePage {
 
@@ -177,4 +180,65 @@ public class RegistrationPage extends BasePage {
         }
     }
 
+
+    public boolean getRegionalSettings() {
+        try {
+            driver.manage().window().maximize();
+            Thread.sleep(2000);
+            // wait for all elements to load
+
+            WebElement languageSelectList = driver.findElement(By.id("language-switch"));
+            Select selectList = new Select(languageSelectList);
+
+            List<String> englishElements = getSomeWebElements();
+            // before choosing another language, get some elements from the current for later comparison
+
+            selectList.selectByIndex(1);
+            // For the purpose of testing, choosing 'Chinese' as a primary language
+            Thread.sleep(5000);
+            // wait for new page to laod
+
+            List<String> chineseElements = getSomeWebElements();
+
+            return checkWebElementsLanguage(englishElements, chineseElements);
+            // checking if the chosen web elements are different and have the appropriate language after the change
+        } catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    private boolean checkWebElementsLanguage(List<String> englishElements, List<String> chineseElements) {
+        try {
+            if(!englishElements.get(0).equals("Please select trade role:")
+                    && !chineseElements.get(0).equals("请选择贸易类型:"))
+                return false;
+            if(!englishElements.get(1).equals("Email Address:")
+                    && !chineseElements.get(1).equals("电子邮箱:"))
+                return false;
+            if(!englishElements.get(2).equals("Please set the email as the login name")
+                    && !chineseElements.get(2).equals("请设置邮箱作为登录名"))
+                return false;
+            if(!englishElements.get(3).equals("Please set the login password")
+                    && !chineseElements.get(3).equals("请设置登录密码"))
+                return false;
+
+            return true;
+            // if everything is as it should be, the check returns true
+        } catch (Exception ignored) {
+            return false;
+        }
+    }
+
+    private List<String> getSomeWebElements() {
+        try {
+            String tradeRoleLabel = driver.findElement(By.xpath("/html/body/div[2]/div/form/div/div[2]/label")).getText();
+            String emailLabel = driver.findElement(By.xpath("/html/body/div[2]/div/form/div/div[3]/label")).getText();
+            String emailPlaceHolder = driver.findElement(By.id("email")).getAttribute("placeholder");
+            String passwordPlaceholder = driver.findElement(By.id("password")).getAttribute("placeholder");
+
+            return List.of(tradeRoleLabel, emailLabel, emailPlaceHolder, passwordPlaceholder);
+        } catch (Exception ignored) {
+            return null;
+        }
+    }
 }
