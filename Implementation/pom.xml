@@ -106,6 +106,12 @@
             <artifactId>selenium-api</artifactId>
             <version>3.141.59</version>
         </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
