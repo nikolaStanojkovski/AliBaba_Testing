@@ -26,7 +26,6 @@ public class LanguageTest {
 
         Test 4: Language change check on Product Listing Page
         Test 5: Language change check on Specific Product Page
-        Test 6: Language change check on Filter Options
      */
 
     @BeforeTest
@@ -53,6 +52,8 @@ public class LanguageTest {
     @Order(2)
     @Test
     public void test2() throws InterruptedException {
+        tearDown();
+        setup();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
 
@@ -72,6 +73,8 @@ public class LanguageTest {
     @Order(4)
     @Test
     public void test4() throws InterruptedException {
+        tearDown();
+        setup();
         ProductsListPage productsListPage = new ProductsListPage(driver);
         productsListPage.open();
 

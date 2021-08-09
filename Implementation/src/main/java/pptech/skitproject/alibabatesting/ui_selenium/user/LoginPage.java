@@ -28,12 +28,16 @@ public class LoginPage extends BasePage {
     }
 
     public void signIn(String email, String password) throws InterruptedException {
+        driver.manage().window().maximize();
+        Thread.sleep(2000);
+
         // email
         driver.findElement(By.id("fm-login-id")).sendKeys(email);
+        Thread.sleep(1000);
 
         // password
         driver.findElement(By.id("fm-login-password")).sendKeys(password);
-
+        Thread.sleep(1000);
 
         // submit button
         driver.findElement((By.cssSelector("input[value='Sign In']"))).click();
@@ -59,6 +63,18 @@ public class LoginPage extends BasePage {
             Thread.sleep(5000);
         } catch (NoSuchElementException | InterruptedException ignored) {
 
+        }
+    }
+
+    public boolean getSliderBar() {
+        try {
+            WebElement slider = driver.findElement(By.id("nc_1_n1z"));
+            Thread.sleep(2500);
+
+            return slider != null;
+            // check if the slider is existent on the page
+        } catch (Exception ignored) {
+            return false;
         }
     }
 

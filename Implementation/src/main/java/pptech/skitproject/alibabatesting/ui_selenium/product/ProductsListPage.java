@@ -71,8 +71,8 @@ public class ProductsListPage extends BasePage {
             WebElement title = driver.findElement(By.xpath("//*[@id=\"mod_2_10454002\"]/div/a/div/div[2]/div[1]/span"));
 
             return product != null && product.isDisplayed() &&
-                    title != null && title.isDisplayed() && title.getText().equals("10cm rf jumper assembly n plug to sma plug for semi-rigid rg141 jumper cables");
-            // return true if the product is displayed and the particular title for the product is displayed
+                    title != null && title.isDisplayed() && !title.getText().equals("");
+            // return true if the product is displayed and the particular non-null title for the product is displayed
         } catch (Exception ignored) {
             return false;
         }
@@ -86,10 +86,12 @@ public class ProductsListPage extends BasePage {
             String[] parts = price.getText().split(" - ");
             String minPrice = parts[0];
             String maxPrice = parts[1];
+            Thread.sleep(2000);
+            // wait for everything to load
 
             return product != null && product.isDisplayed() && price.isDisplayed()
-                    && minPrice.equals("$0.80") && maxPrice.equals("$1.00");
-            // return true if the product is displayed and the particular minimal and maximum price for the product is displayed (therefore the full price range is displayed)
+                    && !minPrice.equals("") && !maxPrice.equals("");
+            // return true if the product is displayed and the particular minimal and maximum non-null price for the product is displayed (therefore the full price range is displayed)
         } catch (Exception ignored) {
             return false;
         }
@@ -102,8 +104,8 @@ public class ProductsListPage extends BasePage {
             WebElement moq = driver.findElement(By.xpath("//*[@id=\"mod_2_10454002\"]/div/a/div/div[2]/div[3]/div[1]/span"));
 
             return product != null && product.isDisplayed() &&
-                    moq != null && moq.isDisplayed() && moq.getText().equals("10.0 Pieces");
-            // return true if the product is displayed and the particular MOQ quantity for the product is displayed
+                    moq != null && moq.isDisplayed() && !moq.getText().equals("");
+            // return true if the product is displayed and the particular non-null MOQ quantity for the product is displayed
         } catch (Exception ignored) {
             return false;
         }

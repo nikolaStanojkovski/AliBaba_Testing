@@ -36,8 +36,9 @@ public class HelpTest {
         driver.quit();
     }
 
+
     @Order(1)
-    @Test
+    @Test(priority = 1)
     public void test1() {
         HelpPages helpPages = new HelpPages(driver);
 
@@ -45,7 +46,7 @@ public class HelpTest {
     }
 
     @Order(2)
-    @Test
+    @Test(priority = 2)
     public void test2() {
         HelpPages helpPages = new HelpPages(driver);
 
@@ -53,7 +54,7 @@ public class HelpTest {
     }
 
     @Order(3)
-    @Test
+    @Test(priority = 3)
     public void test3() {
         tearDown();
         setup();
@@ -64,7 +65,7 @@ public class HelpTest {
     }
 
     @Order(4)
-    @Test
+    @Test(priority = 4)
     public void test4() {
         tearDown();
         setup();
@@ -75,7 +76,7 @@ public class HelpTest {
     }
 
     @Order(5)
-    @Test
+    @Test(priority = 5)
     public void test5() {
         tearDown();
         setup();
@@ -86,7 +87,7 @@ public class HelpTest {
     }
 
     @Order(6)
-    @Test
+    @Test(priority = 6)
     public void test6() {
         tearDown();
         setup();
@@ -97,7 +98,7 @@ public class HelpTest {
     }
 
     @Order(7)
-    @Test
+    @Test(priority = 7)
     public void test7() {
         tearDown();
         setup();
@@ -108,7 +109,7 @@ public class HelpTest {
     }
 
     @Order(8)
-    @Test
+    @Test(priority = 8)
     public void test8() throws InterruptedException {
         tearDown();
         setup();
@@ -119,7 +120,7 @@ public class HelpTest {
     }
 
     @Order(9)
-    @Test
+    @Test(priority = 9)
     public void test9() {
         tearDown();
         setup();
@@ -130,7 +131,7 @@ public class HelpTest {
     }
 
     @Order(10)
-    @Test
+    @Test(priority = 10)
     public void test10() {
         tearDown();
         setup();

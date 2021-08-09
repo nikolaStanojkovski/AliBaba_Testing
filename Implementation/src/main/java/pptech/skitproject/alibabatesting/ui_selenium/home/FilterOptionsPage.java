@@ -23,6 +23,7 @@ public class FilterOptionsPage extends BasePage {
         return wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("root")))).isDisplayed();
     }
 
+
     public boolean getMainFiltersListing() {
         try {
             WebElement element = driver.findElement(By.className("search-rts__left-filters"));

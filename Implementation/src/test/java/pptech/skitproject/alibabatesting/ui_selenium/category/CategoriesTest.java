@@ -1,4 +1,4 @@
-package pptech.skitproject.alibabatesting.ui_selenium.home;
+package pptech.skitproject.alibabatesting.ui_selenium.category;
 
 import org.junit.jupiter.api.Order;
 import org.openqa.selenium.WebDriver;
@@ -7,28 +7,21 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pptech.skitproject.alibabatesting.ui_selenium.Setup;
+import pptech.skitproject.alibabatesting.ui_selenium.category.CategoriesPage;
+import pptech.skitproject.alibabatesting.ui_selenium.category.SubcategoryPage;
 
 public class CategoriesTest {
 
     private WebDriver driver;
 
     /*
-        Category listing page:
-            Test 1: Main categories list existence
-            Test 2: Main specific categories listing check
-            Test 3: Main specific categories in the page existence
-            Test 4: Subcategories listing existence
-            Test 5: Navigation to the specific category on the page
-            Test 6: Navigation to a specific category page
-            Test 7: Navigation to a specific subcategory page
-
-        Specific category page:
-            Test 8: Subcategory list existence
-            Test 9: Subcategories list check
-            Test 10: Image navigation list existence
-            Test 11: Image navigation list check
-            Test 12: 3D Reality Showroom section check
-            Test 13: Product recommendations section check
+        Test 1: Main categories list existence
+        Test 2: Main specific categories listing check
+        Test 3: Main specific categories in the page existence
+        Test 4: Subcategories listing existence
+        Test 5: Navigation to the specific category on the page
+        Test 6: Navigation to a specific category page
+        Test 7: Navigation to a specific subcategory page
 
      */
 
@@ -43,7 +36,7 @@ public class CategoriesTest {
     }
 
     @Order(1)
-    @Test
+    @Test(priority = 1)
     public void shouldOpenMain() throws InterruptedException {
         CategoriesPage categoriesPage = new CategoriesPage(driver);
         categoriesPage.openMain();
@@ -51,7 +44,7 @@ public class CategoriesTest {
     }
 
     @Order(2)
-    @Test
+    @Test(priority = 2)
     public void shouldOpenSpecificCategory() throws InterruptedException {
         CategoriesPage categoriesPage = new CategoriesPage(driver);
         categoriesPage.openSpecificCategory();
@@ -59,11 +52,8 @@ public class CategoriesTest {
     }
 
 
-    // All categories page
-
-
     @Order(3)
-    @Test
+    @Test(priority = 3)
     public void test1() throws InterruptedException {
         CategoriesPage categoriesPage = new CategoriesPage(driver);
         categoriesPage.openMain();
@@ -72,7 +62,7 @@ public class CategoriesTest {
     }
 
     @Order(4)
-    @Test
+    @Test(priority = 4)
     public void test2() throws InterruptedException {
         CategoriesPage categoriesPage = new CategoriesPage(driver);
         categoriesPage.openMain();
@@ -81,7 +71,7 @@ public class CategoriesTest {
     }
 
     @Order(5)
-    @Test
+    @Test(priority = 5)
     public void test3() throws InterruptedException {
         CategoriesPage categoriesPage = new CategoriesPage(driver);
         categoriesPage.openMain();
@@ -90,7 +80,7 @@ public class CategoriesTest {
     }
 
     @Order(6)
-    @Test
+    @Test(priority = 6)
     public void test4() throws InterruptedException {
         CategoriesPage categoriesPage = new CategoriesPage(driver);
         categoriesPage.openMain();
@@ -99,7 +89,7 @@ public class CategoriesTest {
     }
 
     @Order(7)
-    @Test
+    @Test(priority = 7)
     public void test5() throws InterruptedException {
         CategoriesPage categoriesPage = new CategoriesPage(driver);
         categoriesPage.openMain();
@@ -108,9 +98,12 @@ public class CategoriesTest {
     }
 
     @Order(8)
-    @Test
+    @Test(priority = 8)
     public void test6() throws InterruptedException {
         Thread.sleep(4000);
+        tearDown();
+        setup();
+
         CategoriesPage categoriesPage = new CategoriesPage(driver);
         categoriesPage.openMain();
 
@@ -120,72 +113,17 @@ public class CategoriesTest {
     }
 
     @Order(9)
-    @Test
+    @Test(priority = 9)
     public void test7() throws InterruptedException {
         Thread.sleep(4000);
+        tearDown();
+        setup();
+
         CategoriesPage categoriesPage = new CategoriesPage(driver);
         categoriesPage.openMain();
 
         categoriesPage.navigateToSpecificSubcategoryPage();
 
         Assert.assertTrue(driver.getCurrentUrl().contains("https://www.alibaba.com/catalog/classic-toys"));
-    }
-
-
-    // Specific category page
-
-
-    @Order(10)
-    @Test
-    public void test8() throws InterruptedException {
-        SubcategoryPage subcategoryPage = new SubcategoryPage(driver);
-        subcategoryPage.open();
-
-        Assert.assertTrue(subcategoryPage.getSubcategoryListing());
-    }
-
-    @Order(11)
-    @Test
-    public void test9() throws InterruptedException {
-        SubcategoryPage subcategoryPage = new SubcategoryPage(driver);
-        subcategoryPage.open();
-
-        Assert.assertTrue(subcategoryPage.getSubcategories());
-    }
-
-    @Order(12)
-    @Test
-    public void test10() throws InterruptedException {
-        SubcategoryPage subcategoryPage = new SubcategoryPage(driver);
-        subcategoryPage.open();
-
-        Assert.assertTrue(subcategoryPage.getImageNavigationListing());
-    }
-
-    @Order(13)
-    @Test
-    public void test11() throws InterruptedException {
-        SubcategoryPage subcategoryPage = new SubcategoryPage(driver);
-        subcategoryPage.open();
-
-        Assert.assertTrue(subcategoryPage.getImageNavigationItems());
-    }
-
-    @Order(14)
-    @Test
-    public void test12() throws InterruptedException {
-        SubcategoryPage subcategoryPage = new SubcategoryPage(driver);
-        subcategoryPage.open();
-
-        Assert.assertTrue(subcategoryPage.get3DRealityShowroom());
-    }
-
-    @Order(15)
-    @Test
-    public void test13() throws InterruptedException {
-        SubcategoryPage subcategoryPage = new SubcategoryPage(driver);
-        subcategoryPage.open();
-
-        Assert.assertTrue(subcategoryPage.getRecommendationsList());
     }
 }

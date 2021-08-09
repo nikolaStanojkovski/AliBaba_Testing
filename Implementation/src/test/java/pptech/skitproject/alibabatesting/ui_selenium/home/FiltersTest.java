@@ -52,7 +52,7 @@ public class FiltersTest {
 
 
     @Order(2)
-    @Test
+    @Test(priority = 2)
     public void test1() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
@@ -64,7 +64,7 @@ public class FiltersTest {
     }
 
     @Order(3)
-    @Test
+    @Test(priority = 3)
     public void test2() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();
@@ -73,7 +73,7 @@ public class FiltersTest {
     }
 
     @Order(4)
-    @Test
+    @Test(priority = 4)
     public void test3() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();
@@ -82,7 +82,7 @@ public class FiltersTest {
     }
 
     @Order(5)
-    @Test
+    @Test(priority = 5)
     public void test4() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();
@@ -93,7 +93,7 @@ public class FiltersTest {
     }
 
     @Order(6)
-    @Test
+    @Test(priority = 6)
     public void test5() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();
@@ -104,7 +104,7 @@ public class FiltersTest {
     }
 
     @Order(7)
-    @Test
+    @Test(priority = 7)
     public void test6() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();
@@ -115,7 +115,7 @@ public class FiltersTest {
     }
 
     @Order(8)
-    @Test
+    @Test(priority = 8)
     public void test7() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();
@@ -126,7 +126,7 @@ public class FiltersTest {
     }
 
     @Order(9)
-    @Test
+    @Test(priority = 9)
     public void test8() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();
@@ -137,7 +137,7 @@ public class FiltersTest {
     }
 
     @Order(10)
-    @Test
+    @Test(priority = 10)
     public void test9() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();
@@ -148,7 +148,7 @@ public class FiltersTest {
     }
 
     @Order(11)
-    @Test
+    @Test(priority = 11)
     public void test10() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();
@@ -159,7 +159,7 @@ public class FiltersTest {
     }
 
     @Order(12)
-    @Test
+    @Test(priority = 12)
     public void test11() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();
@@ -170,7 +170,7 @@ public class FiltersTest {
     }
 
     @Order(13)
-    @Test
+    @Test(priority = 13)
     public void test12() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();
@@ -181,7 +181,7 @@ public class FiltersTest {
     }
 
     @Order(14)
-    @Test
+    @Test(priority = 14)
     public void test13() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();
@@ -192,7 +192,7 @@ public class FiltersTest {
     }
 
     @Order(15)
-    @Test
+    @Test(priority = 15)
     public void test14() throws InterruptedException {
         FilterOptionsPage filterOptionsPage = new FilterOptionsPage(driver);
         filterOptionsPage.open();

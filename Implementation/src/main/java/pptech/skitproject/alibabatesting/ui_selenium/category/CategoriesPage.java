@@ -1,4 +1,4 @@
-package pptech.skitproject.alibabatesting.ui_selenium.home;
+package pptech.skitproject.alibabatesting.ui_selenium.category;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -48,7 +48,6 @@ public class CategoriesPage extends BasePage {
     public boolean getAllCategoriesListing() {
         try {
             driver.manage().window().maximize();
-            // window needs to be full screen in order or load all account icons
             Thread.sleep(1500); // wait until elements are loaded
 
             List<WebElement> categoryItems = driver.findElements(By.className("desc"));
@@ -79,7 +78,6 @@ public class CategoriesPage extends BasePage {
     public boolean getAllCategoriesInSections() {
         try {
             driver.manage().window().maximize();
-            // window needs to be full screen in order or load all account icons
             Thread.sleep(1500); // wait until elements are loaded
 
             List<WebElement> categoryItems = driver.findElements(By.className("big-title"));
@@ -123,7 +121,6 @@ public class CategoriesPage extends BasePage {
 
     public boolean getToSpecificCategorySection() throws InterruptedException {
         driver.manage().window().maximize();
-        // window needs to be full screen in order or load all account icons
         Thread.sleep(1500); // wait until elements are loaded
 
         // For test purposes we are navigating to the "Gifts, Sports & Toys" specific category section
@@ -142,7 +139,6 @@ public class CategoriesPage extends BasePage {
 
     public void navigateToSpecificCategoryPage() throws InterruptedException {
         driver.manage().window().maximize();
-        // window needs to be full screen in order or load all account icons
         Thread.sleep(1500); // wait until elements are loaded
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();
@@ -158,7 +154,6 @@ public class CategoriesPage extends BasePage {
 
     public void navigateToSpecificSubcategoryPage() throws InterruptedException {
         driver.manage().window().maximize();
-        // window needs to be full screen in order or load all account icons
         Thread.sleep(1500); // wait until elements are loaded
         JavascriptExecutor js = (JavascriptExecutor) driver;
         driver.manage().window().maximize();

@@ -15,10 +15,7 @@ public class HomeTest {
     /*
         Test 1: Navigation existence
         Test 2: Search bar existence
-
-        Test 3_1: Account widget icons without logged in user existence
-        Test 3_2: Account widget icons without logged in user existence
-
+        Test 3: Account widget icons without logged in user existence
         Test 4: Important navigation items existence
         Test 5: Important category listing
         Test 6: Trending products listing
@@ -28,6 +25,7 @@ public class HomeTest {
         Test 10: Weekly market listing
         Test 11: Request for quotation form existence
         Test 12: Recommendations and personalization products existence
+
      */
 
     @BeforeTest
@@ -42,7 +40,7 @@ public class HomeTest {
 
 
     @Order(1)
-    @Test
+    @Test(priority = 1)
     public void shouldOpen() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
@@ -51,7 +49,7 @@ public class HomeTest {
 
 
     @Order(2)
-    @Test
+    @Test(priority = 2)
     public void test1() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
@@ -60,7 +58,7 @@ public class HomeTest {
     }
 
     @Order(3)
-    @Test
+    @Test(priority = 3)
     public void test2() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
@@ -69,25 +67,16 @@ public class HomeTest {
     }
 
     @Order(4)
-    @Test
-    public void test3_1() throws InterruptedException {
+    @Test(priority = 4)
+    public void test3() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
 
         Assert.assertTrue(homePage.getAccountIconsExistence());
     }
 
-//    @Order(14)
-//    @Test
-//    public void test3_2() throws InterruptedException {
-//        HomePage homePage = new HomePage(driver);
-//        homePage.open();
-//
-//        Assert.assertTrue(homePage.getAccountIconsExistence(true));
-//    }
-
     @Order(5)
-    @Test
+    @Test(priority = 5)
     public void test4() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
@@ -96,7 +85,7 @@ public class HomeTest {
     }
 
     @Order(6)
-    @Test
+    @Test(priority = 6)
     public void test5() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
@@ -105,7 +94,7 @@ public class HomeTest {
     }
 
     @Order(7)
-    @Test
+    @Test(priority = 7)
     public void test6() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
@@ -114,7 +103,7 @@ public class HomeTest {
     }
 
     @Order(8)
-    @Test
+    @Test(priority = 8)
     public void test7() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
@@ -123,7 +112,7 @@ public class HomeTest {
     }
 
     @Order(9)
-    @Test
+    @Test(priority = 9)
     public void test8() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
@@ -132,7 +121,7 @@ public class HomeTest {
     }
 
     @Order(10)
-    @Test
+    @Test(priority = 10)
     public void test9() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
@@ -141,7 +130,7 @@ public class HomeTest {
     }
 
     @Order(11)
-    @Test
+    @Test(priority = 11)
     public void test10() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
@@ -150,7 +139,7 @@ public class HomeTest {
     }
 
     @Order(12)
-    @Test
+    @Test(priority = 12)
     public void test11() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();
@@ -159,7 +148,7 @@ public class HomeTest {
     }
 
     @Order(13)
-    @Test
+    @Test(priority = 13)
     public void test12() throws InterruptedException {
         HomePage homePage = new HomePage(driver);
         homePage.open();

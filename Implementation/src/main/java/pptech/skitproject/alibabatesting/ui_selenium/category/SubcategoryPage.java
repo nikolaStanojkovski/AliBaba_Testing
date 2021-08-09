@@ -1,4 +1,4 @@
-package pptech.skitproject.alibabatesting.ui_selenium.home;
+package pptech.skitproject.alibabatesting.ui_selenium.category;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -24,9 +24,9 @@ public class SubcategoryPage extends BasePage {
         return wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.className("pageContent")))).isDisplayed();
     }
 
+
     public boolean getSubcategoryListing() throws InterruptedException {
         driver.manage().window().maximize();
-        // window needs to be full screen in order or load all account icons
         Thread.sleep(1500); // wait until elements are loaded
         try {
             String title = driver.findElement(By.xpath("//*[@id=\"mod_0_10571008\"]/div/div[1]/div/div[1]")).getText();
@@ -64,7 +64,6 @@ public class SubcategoryPage extends BasePage {
 
     public boolean getImageNavigationListing() throws InterruptedException {
         driver.manage().window().maximize();
-        // window needs to be full screen in order or load all account icons
         Thread.sleep(1500); // wait until elements are loaded
         try {
             WebElement categoryNavigation = driver.findElement(By.className("imageNav"));

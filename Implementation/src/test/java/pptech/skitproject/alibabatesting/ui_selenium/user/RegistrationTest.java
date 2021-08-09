@@ -42,15 +42,16 @@ public class RegistrationTest {
         driver.quit();
     }
 
-    @Test
+    @Test(priority = 1)
     public void shouldOpen() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
         Assert.assertTrue(registrationPage.isLoaded());
     }
 
-    @Order(1)
-    @Test
+
+    @Order(2)
+    @Test(priority = 2)
     public void test1() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -60,8 +61,8 @@ public class RegistrationTest {
         Assert.assertTrue(registrationPage.bannerIsOpened());
     }
 
-    @Order(2)
-    @Test
+    @Order(3)
+    @Test(priority = 3)
     public void test2() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -71,8 +72,8 @@ public class RegistrationTest {
         Assert.assertEquals(registrationPage.getTradeRoleError(), "Please select trade role");
     }
 
-    @Order(3)
-    @Test
+    @Order(4)
+    @Test(priority = 4)
     public void test3() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -82,8 +83,8 @@ public class RegistrationTest {
         Assert.assertEquals(registrationPage.getEmailError(), "Please enter your email");
     }
 
-    @Order(4)
-    @Test
+    @Order(5)
+    @Test(priority = 5)
     public void test4() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -93,8 +94,8 @@ public class RegistrationTest {
         Assert.assertEquals(registrationPage.getEmailError(), "The format of the email address is incorrect. Please fill in again");
     }
 
-    @Order(5)
-    @Test
+    @Order(6)
+    @Test(priority = 6)
     public void test5() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -104,8 +105,8 @@ public class RegistrationTest {
         Assert.assertEquals(registrationPage.getPasswordError(), "Please set the login password");
     }
 
-    @Order(6)
-    @Test
+    @Order(7)
+    @Test(priority = 7)
     public void test6() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -115,8 +116,8 @@ public class RegistrationTest {
         Assert.assertEquals(registrationPage.getPasswordError(), "The password setting does not meet the requirements");
     }
 
-    @Order(7)
-    @Test
+    @Order(8)
+    @Test(priority = 8)
     public void test7() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -126,8 +127,8 @@ public class RegistrationTest {
         Assert.assertEquals(registrationPage.getConfirmPasswordError(), "Please enter the login password again");
     }
 
-    @Order(8)
-    @Test
+    @Order(9)
+    @Test(priority = 0)
     public void test8() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -137,8 +138,8 @@ public class RegistrationTest {
         Assert.assertEquals(registrationPage.getConfirmPasswordError(), "The two passwords you entered are inconsistent. Please enter again");
     }
 
-    @Order(9)
-    @Test
+    @Order(10)
+    @Test(priority = 10)
     public void test9() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -148,8 +149,8 @@ public class RegistrationTest {
         Assert.assertEquals(registrationPage.getCompanyNameError(), "Enter the company name");
     }
 
-    @Order(10)
-    @Test
+    @Order(11)
+    @Test(priority = 11)
     public void test10() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -159,8 +160,8 @@ public class RegistrationTest {
         Assert.assertEquals(registrationPage.getUsernameError(), "Please enter the user name");
     }
 
-    @Order(11)
-    @Test
+    @Order(12)
+    @Test(priority = 12)
     public void test11() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -170,8 +171,8 @@ public class RegistrationTest {
         Assert.assertEquals(registrationPage.getUsernameError(), "Please enter 1-60 alphabetical characters");
     }
 
-    @Order(12)
-    @Test
+    @Order(13)
+    @Test(priority = 13)
     public void test12() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -181,8 +182,8 @@ public class RegistrationTest {
         Assert.assertEquals(registrationPage.getPhoneNumberError(), "Please enter less than 14 digits");
     }
 
-    @Order(13)
-    @Test
+    @Order(14)
+    @Test(priority = 14)
     public void test13() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
@@ -192,8 +193,8 @@ public class RegistrationTest {
         Assert.assertEquals(registrationPage.getVerificationError(), "Please drag the slider for verification");
     }
 
-    @Order(14)
-    @Test
+    @Order(15)
+    @Test(priority = 15)
     public void test14() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();

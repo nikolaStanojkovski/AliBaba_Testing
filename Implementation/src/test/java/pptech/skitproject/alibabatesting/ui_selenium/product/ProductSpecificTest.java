@@ -48,6 +48,7 @@ public class ProductSpecificTest {
 
         Test 28: Recommendations section check
         Test 29: Recommendations section items check
+
      */
 
     @BeforeTest
@@ -61,7 +62,7 @@ public class ProductSpecificTest {
     }
 
     @Order(1)
-    @Test
+    @Test(priority = 1)
     public void shouldOpen() throws InterruptedException {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
@@ -69,7 +70,7 @@ public class ProductSpecificTest {
     }
 
     @Order(2)
-    @Test
+    @Test(priority = 2)
     public void test1() throws InterruptedException {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
@@ -78,7 +79,7 @@ public class ProductSpecificTest {
     }
 
     @Order(3)
-    @Test
+    @Test(priority = 3)
     public void test2() throws InterruptedException {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
@@ -87,7 +88,7 @@ public class ProductSpecificTest {
     }
 
     @Order(4)
-    @Test
+    @Test(priority = 4)
     public void test3() throws InterruptedException {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
@@ -96,7 +97,7 @@ public class ProductSpecificTest {
     }
 
     @Order(5)
-    @Test
+    @Test(priority = 5)
     public void test4() throws InterruptedException {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
@@ -105,7 +106,7 @@ public class ProductSpecificTest {
     }
 
     @Order(6)
-    @Test
+    @Test(priority = 6)
     public void test5() throws InterruptedException {
         Thread.sleep(2000);
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
@@ -115,7 +116,7 @@ public class ProductSpecificTest {
     }
 
     @Order(7)
-    @Test
+    @Test(priority = 7)
     public void test6() throws InterruptedException {
         Thread.sleep(2000);
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
@@ -125,7 +126,7 @@ public class ProductSpecificTest {
     }
 
     @Order(8)
-    @Test
+    @Test(priority = 8)
     public void test7() throws InterruptedException {
         Thread.sleep(2000);
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
@@ -135,7 +136,7 @@ public class ProductSpecificTest {
     }
 
     @Order(9)
-    @Test
+    @Test(priority = 9)
     public void test8() throws InterruptedException {
         Thread.sleep(2000);
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
@@ -145,7 +146,7 @@ public class ProductSpecificTest {
     }
 
     @Order(10)
-    @Test
+    @Test(priority = 10)
     public void test9() throws InterruptedException {
         Thread.sleep(2000);
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
@@ -155,7 +156,7 @@ public class ProductSpecificTest {
     }
 
     @Order(11)
-    @Test
+    @Test(priority = 11)
     public void test10() throws InterruptedException {
         Thread.sleep(2000);
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
@@ -165,9 +166,12 @@ public class ProductSpecificTest {
     }
 
     @Order(12)
-    @Test
+    @Test(priority = 12)
     public void test11() throws InterruptedException {
+        tearDown();
+        setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -175,9 +179,12 @@ public class ProductSpecificTest {
     }
 
     @Order(13)
-    @Test
+    @Test(priority = 13)
     public void test12() throws InterruptedException {
+        tearDown();
+        setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -185,7 +192,7 @@ public class ProductSpecificTest {
     }
 
     @Order(14)
-    @Test
+    @Test(priority = 14)
     public void test13() throws InterruptedException {
         tearDown();
         setup();
@@ -197,11 +204,12 @@ public class ProductSpecificTest {
     }
 
     @Order(15)
-    @Test
+    @Test(priority = 15)
     public void test14() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -209,11 +217,12 @@ public class ProductSpecificTest {
     }
 
     @Order(16)
-    @Test
+    @Test(priority = 16)
     public void test15() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -221,7 +230,7 @@ public class ProductSpecificTest {
     }
 
     @Order(17)
-    @Test
+    @Test(priority = 17)
     public void test16() throws InterruptedException {
         tearDown();
         setup();
@@ -233,7 +242,7 @@ public class ProductSpecificTest {
     }
 
     @Order(18)
-    @Test
+    @Test(priority = 18)
     public void test17() throws InterruptedException {
         tearDown();
         setup();
@@ -245,9 +254,12 @@ public class ProductSpecificTest {
     }
 
     @Order(19)
-    @Test
+    @Test(priority = 19)
     public void test18() throws InterruptedException {
+        tearDown();
+        setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -256,11 +268,12 @@ public class ProductSpecificTest {
 
 
     @Order(20)
-    @Test
+    @Test(priority = 20)
     public void test19() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -268,11 +281,12 @@ public class ProductSpecificTest {
     }
 
     @Order(21)
-    @Test
+    @Test(priority = 21)
     public void test20() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -280,11 +294,12 @@ public class ProductSpecificTest {
     }
 
     @Order(22)
-    @Test
+    @Test(priority = 22)
     public void test21() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -292,11 +307,12 @@ public class ProductSpecificTest {
     }
 
     @Order(23)
-    @Test
+    @Test(priority = 23)
     public void test22() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -305,11 +321,12 @@ public class ProductSpecificTest {
 
 
     @Order(24)
-    @Test
+    @Test(priority = 24)
     public void test23() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -317,11 +334,12 @@ public class ProductSpecificTest {
     }
 
     @Order(25)
-    @Test
+    @Test(priority = 25)
     public void test24() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -329,11 +347,12 @@ public class ProductSpecificTest {
     }
 
     @Order(26)
-    @Test
+    @Test(priority = 26)
     public void test25() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -341,11 +360,12 @@ public class ProductSpecificTest {
     }
 
     @Order(27)
-    @Test
+    @Test(priority = 27)
     public void test26() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -353,11 +373,12 @@ public class ProductSpecificTest {
     }
 
     @Order(28)
-    @Test
+    @Test(priority = 28)
     public void test27() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -366,11 +387,12 @@ public class ProductSpecificTest {
 
 
     @Order(29)
-    @Test
+    @Test(priority = 29)
     public void test28() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
@@ -378,11 +400,12 @@ public class ProductSpecificTest {
     }
 
     @Order(30)
-    @Test
+    @Test(priority = 30)
     public void test29() throws InterruptedException {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 

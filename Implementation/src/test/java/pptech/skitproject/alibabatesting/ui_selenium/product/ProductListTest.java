@@ -24,6 +24,7 @@ public class ProductListTest {
 
         Test 8: "About products and suppliers" section existence
         Test 9: "Related products" section existence
+
      */
 
     @BeforeTest
@@ -37,7 +38,7 @@ public class ProductListTest {
     }
 
     @Order(1)
-    @Test
+    @Test(priority = 1)
     public void shouldOpen() throws InterruptedException {
         ProductsListPage productsListPage = new ProductsListPage(driver);
         productsListPage.open();
@@ -46,7 +47,7 @@ public class ProductListTest {
 
 
     @Order(2)
-    @Test
+    @Test(priority = 2)
     public void test1() throws InterruptedException {
         ProductsListPage productsListPage = new ProductsListPage(driver);
         productsListPage.open();
@@ -55,7 +56,7 @@ public class ProductListTest {
     }
 
     @Order(3)
-    @Test
+    @Test(priority = 3)
     public void test2() throws InterruptedException {
         ProductsListPage productsListPage = new ProductsListPage(driver);
         productsListPage.open();
@@ -65,7 +66,7 @@ public class ProductListTest {
 
 
     @Order(4)
-    @Test
+    @Test(priority = 4)
     public void test3() throws InterruptedException {
         ProductsListPage productsListPage = new ProductsListPage(driver);
         productsListPage.open();
@@ -74,7 +75,7 @@ public class ProductListTest {
     }
 
     @Order(5)
-    @Test
+    @Test(priority = 5)
     public void test4() throws InterruptedException {
         tearDown();
         setup();
@@ -87,7 +88,7 @@ public class ProductListTest {
     }
 
     @Order(6)
-    @Test
+    @Test(priority = 6)
     public void test5() throws InterruptedException {
         tearDown();
         setup();
@@ -100,7 +101,7 @@ public class ProductListTest {
     }
 
     @Order(7)
-    @Test
+    @Test(priority = 7)
     public void test6() throws InterruptedException {
         tearDown();
         setup();
@@ -113,7 +114,7 @@ public class ProductListTest {
     }
 
     @Order(8)
-    @Test
+    @Test(priority = 8)
     public void test7() throws InterruptedException {
         ProductsListPage productsListPage = new ProductsListPage(driver);
         productsListPage.open();
@@ -123,7 +124,7 @@ public class ProductListTest {
 
 
     @Order(9)
-    @Test
+    @Test(priority = 9)
     public void test8() throws InterruptedException {
         ProductsListPage productsListPage = new ProductsListPage(driver);
         productsListPage.open();
@@ -132,7 +133,7 @@ public class ProductListTest {
     }
 
     @Order(10)
-    @Test
+    @Test(priority = 10)
     public void test9() throws InterruptedException {
         ProductsListPage productsListPage = new ProductsListPage(driver);
         productsListPage.open();
