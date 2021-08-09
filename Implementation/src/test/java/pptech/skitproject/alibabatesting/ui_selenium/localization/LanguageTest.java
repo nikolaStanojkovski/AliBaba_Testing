@@ -8,7 +8,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pptech.skitproject.alibabatesting.ui_selenium.Setup;
 import pptech.skitproject.alibabatesting.ui_selenium.home.HomePage;
-import pptech.skitproject.alibabatesting.ui_selenium.product.ProductListTest;
 import pptech.skitproject.alibabatesting.ui_selenium.product.ProductSpecificPage;
 import pptech.skitproject.alibabatesting.ui_selenium.product.ProductsListPage;
 import pptech.skitproject.alibabatesting.ui_selenium.user.LoginPage;
@@ -75,6 +74,7 @@ public class LanguageTest {
     public void test4() throws InterruptedException {
         tearDown();
         setup();
+
         ProductsListPage productsListPage = new ProductsListPage(driver);
         productsListPage.open();
 
@@ -84,6 +84,9 @@ public class LanguageTest {
     @Order(5)
     @Test
     public void test5() throws InterruptedException {
+        tearDown();
+        setup();
+
         ProductSpecificPage productsSpecificPage = new ProductSpecificPage(driver);
         productsSpecificPage.open();
 

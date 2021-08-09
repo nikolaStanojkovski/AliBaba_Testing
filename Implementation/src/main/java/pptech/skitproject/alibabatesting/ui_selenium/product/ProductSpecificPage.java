@@ -30,6 +30,18 @@ public class ProductSpecificPage extends BasePage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("block-layoutstd"))).isDisplayed();
     }
 
+    public void checkError() {
+        try {
+            WebElement xButton = driver.findElement(By.xpath("/html/body/div[7]/div[2]/div"));
+            Thread.sleep(1000);
+            xButton.click();
+
+            Thread.sleep(5000);
+        } catch (Exception ignored) {
+
+        }
+    }
+
     public boolean getProductAppearance() {
         try {
             driver.manage().window().maximize();
@@ -44,7 +56,6 @@ public class ProductSpecificPage extends BasePage {
             return false;
         }
     }
-
 
     public boolean getProductImage() {
         try {
@@ -192,38 +203,6 @@ public class ProductSpecificPage extends BasePage {
                     && buttonQuantityUp != null && buttonQuantityUp.isDisplayed()
                     && inputQuantity != null && inputQuantity.isDisplayed();
             // Check if the quantity choice section is displayed, the correct title and elements are in it
-        } catch (Exception ignored) {
-            return false;
-        }
-    }
-
-    public boolean getProductAssurance() {
-        try {
-            Thread.sleep(2000);
-            WebElement productAssuranceSection = driver.findElement(By.xpath("//*[@id=\"module_market_action\"]/div/div[2]/div[1]/a"));
-            WebElement productAssuranceTitle = driver.findElement(By.xpath("//*[@id=\"module_market_action\"]/div/div[2]/div[1]/a/span[1]"));
-
-            return productAssuranceSection != null && productAssuranceSection.isDisplayed()
-                    && productAssuranceTitle != null && productAssuranceTitle.isDisplayed()
-                    && productAssuranceTitle.getText().equals("Trade Assurance");
-            // Check if the product assurance section is existent and the title of it is correct (therefore the product assurance is displayed)
-        } catch (Exception ignored) {
-            return false;
-        }
-    }
-
-    public boolean getProductPayments() {
-        try {
-            Thread.sleep(2000);
-            WebElement productPaymentsSection = driver.findElement(By.className("assurance-payment"));
-            WebElement productPaymentsTitle = driver.findElement(By.xpath("//*[@id=\"module_market_action\"]/div/div[2]/div[2]/span[1]/span"));
-            List<WebElement> paymentMethods = driver.findElements(By.className("payment-item"));
-
-            return productPaymentsSection != null && productPaymentsSection.isDisplayed()
-                    && productPaymentsTitle != null && productPaymentsTitle.isDisplayed()
-                    && productPaymentsTitle.getText().equals("Payments:")
-                    && paymentMethods != null && paymentMethods.size() > 0;
-            // Check if the product payments section is existent and the title of it is correct, as well as there are more than 0 elements in it
         } catch (Exception ignored) {
             return false;
         }
@@ -642,8 +621,8 @@ public class ProductSpecificPage extends BasePage {
     private List<String> findSomeWebElementsTestingLanguage() {
         try {
             WebElement youMayLike = driver.findElement(By.xpath("/html/body/div[2]/div/div/div/div[2]/div/div[3]/div/div[1]"));
-            WebElement categoriesTitle = driver.findElement(By.xpath("/html/body/div[1]/div[1]/header/div[4]/div/div[1]/div/div/h3/span]"));
-            WebElement searchInputPlaceholder = driver.findElement(By.xpath("/html/body/div[1]/header/div[2]/div[3]/div/div/form/div[2]/input"));
+            WebElement categoriesTitle = driver.findElement(By.xpath("/html/body/div[1]/div[1]/header/div[4]/div/div[1]/div/div/h3/span"));
+            WebElement searchInputPlaceholder = driver.findElement(By.xpath("/html/body/div[1]/div[1]/header/div[2]/div[3]/div/div/form/div[2]/input"));
 
             return List.of(youMayLike.getText(), categoriesTitle.getText(), searchInputPlaceholder.getAttribute("placeholder"));
         } catch (Exception ignored) {
@@ -653,10 +632,11 @@ public class ProductSpecificPage extends BasePage {
 
     private List<String> findSomeWebElementsTestingCurrency() {
         try {
-            List<WebElement> allSpanElements = driver.findElements(By.tagName("span"));
+            WebElement fullSection = driver.findElement(By.id("module_recommandproducts_you_may_like"));
+            List<WebElement> allSpans = fullSection.findElements(By.tagName("span"));
             // all span elements, some of which contain the currency
 
-            return allSpanElements.stream().map(WebElement::getText).collect(Collectors.toList());
+            return allSpans.stream().map(WebElement::getText).collect(Collectors.toList());
         } catch (Exception ignored) {
             return null;
         }

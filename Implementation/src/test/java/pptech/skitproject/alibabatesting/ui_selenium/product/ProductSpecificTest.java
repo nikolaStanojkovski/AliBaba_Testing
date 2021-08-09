@@ -24,30 +24,28 @@ public class ProductSpecificTest {
         Test 8: Product price check
         Test 9: Product minimum order quantity (MOQ) check
         Test 10: Product quantity check
-        Test 11: Product assurance check
-        Test 12: Product payments check
 
-        Test 13: Product description check
-        Test 14: Product company profile check
-        Test 15: Product buyer reviews check
+        Test 11: Product description check
+        Test 12: Product company profile check
+        Test 13: Product buyer reviews check
 
-        Test 16: Product feedback form existence
-        Test 17: Product feedback form elements check
-        Test 18: Product feedback form functionality
+        Test 14: Product feedback form existence
+        Test 15: Product feedback form elements check
+        Test 16: Product feedback form functionality
 
-        Test 19: Total product price check
-        Test 20: Shipping price check
-        Test 21: Shipping information check
-        Test 22: Total price check
+        Test 17: Total product price check
+        Test 18: Shipping price check
+        Test 19: Shipping information check
+        Test 20: Total price check
 
-        Test 23: 'Order' button check
-        Test 24: 'Contact' button check
-        Test 25: 'Call Us' button check
-        Test 26: 'Add to cart' button check
-        Test 27: 'Favourite' button check
+        Test 21: 'Order' button check
+        Test 22: 'Contact' button check
+        Test 23: 'Call Us' button check
+        Test 24: 'Add to cart' button check
+        Test 25: 'Favourite' button check
 
-        Test 28: Recommendations section check
-        Test 29: Recommendations section items check
+        Test 26: Recommendations section check
+        Test 27: Recommendations section items check
 
      */
 
@@ -69,11 +67,14 @@ public class ProductSpecificTest {
         Assert.assertTrue(productSpecificPage.isLoaded());
     }
 
+
     @Order(2)
     @Test(priority = 2)
     public void test1() throws InterruptedException {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
+
+        productSpecificPage.checkError();
 
         Assert.assertTrue(productSpecificPage.getProductAppearance());
     }
@@ -84,6 +85,8 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
+        productSpecificPage.checkError();
+
         Assert.assertTrue(productSpecificPage.getProductImage());
     }
 
@@ -92,6 +95,8 @@ public class ProductSpecificTest {
     public void test3() throws InterruptedException {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
+
+        productSpecificPage.checkError();
 
         Assert.assertTrue(productSpecificPage.getProductImageList());
     }
@@ -102,6 +107,8 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
+        productSpecificPage.checkError();
+
         Assert.assertTrue(productSpecificPage.getProductTitle());
     }
 
@@ -109,8 +116,11 @@ public class ProductSpecificTest {
     @Test(priority = 6)
     public void test5() throws InterruptedException {
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
+
+        productSpecificPage.checkError();
 
         Assert.assertTrue(productSpecificPage.getProductTags());
     }
@@ -119,8 +129,11 @@ public class ProductSpecificTest {
     @Test(priority = 7)
     public void test6() throws InterruptedException {
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
+
+        productSpecificPage.checkError();
 
         Assert.assertTrue(productSpecificPage.getProductOverallReview());
     }
@@ -129,8 +142,11 @@ public class ProductSpecificTest {
     @Test(priority = 8)
     public void test7() throws InterruptedException {
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
+
+        productSpecificPage.checkError();
 
         Assert.assertTrue(productSpecificPage.getProductQuantitySold());
     }
@@ -139,8 +155,11 @@ public class ProductSpecificTest {
     @Test(priority = 9)
     public void test8() throws InterruptedException {
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
+
+        productSpecificPage.checkError();
 
         Assert.assertTrue(productSpecificPage.getProductPrice());
     }
@@ -149,8 +168,11 @@ public class ProductSpecificTest {
     @Test(priority = 10)
     public void test9() throws InterruptedException {
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
+
+        productSpecificPage.checkError();
 
         Assert.assertTrue(productSpecificPage.getProductMOQ());
     }
@@ -158,12 +180,11 @@ public class ProductSpecificTest {
     @Order(11)
     @Test(priority = 11)
     public void test10() throws InterruptedException {
-        tearDown();
-        setup();
         Thread.sleep(2000);
-
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
+
+        productSpecificPage.checkError();
 
         Assert.assertTrue(productSpecificPage.getProductQuantity());
     }
@@ -178,7 +199,9 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getProductAssurance());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getProductDescription());
     }
 
     @Order(13)
@@ -191,7 +214,9 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getProductPayments());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getCompanyProfile());
     }
 
     @Order(14)
@@ -200,10 +225,13 @@ public class ProductSpecificTest {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getProductDescription());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getProductReviews());
     }
 
     @Order(15)
@@ -212,11 +240,12 @@ public class ProductSpecificTest {
         tearDown();
         setup();
         Thread.sleep(2000);
-
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getCompanyProfile());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getFeedbackForm());
     }
 
     @Order(16)
@@ -225,11 +254,12 @@ public class ProductSpecificTest {
         tearDown();
         setup();
         Thread.sleep(2000);
-
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getProductReviews());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getFeedbackFormElements());
     }
 
     @Order(17)
@@ -238,11 +268,15 @@ public class ProductSpecificTest {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getFeedbackForm());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getFeedbackFormFunctionality());
     }
+
 
     @Order(18)
     @Test(priority = 18)
@@ -250,10 +284,13 @@ public class ProductSpecificTest {
         tearDown();
         setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getFeedbackFormElements());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getTotalProductPrice());
     }
 
     @Order(19)
@@ -266,9 +303,10 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getFeedbackFormFunctionality());
-    }
+        productSpecificPage.checkError();
 
+        Assert.assertTrue(productSpecificPage.getShippingPrice());
+    }
 
     @Order(20)
     @Test(priority = 20)
@@ -280,7 +318,9 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getTotalProductPrice());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getShippingInformation());
     }
 
     @Order(21)
@@ -293,8 +333,11 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getShippingPrice());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getTotalPrice());
     }
+
 
     @Order(22)
     @Test(priority = 22)
@@ -306,7 +349,9 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getShippingInformation());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getOrderButton());
     }
 
     @Order(23)
@@ -319,9 +364,10 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getTotalPrice());
-    }
+        productSpecificPage.checkError();
 
+        Assert.assertTrue(productSpecificPage.getContactButton());
+    }
 
     @Order(24)
     @Test(priority = 24)
@@ -333,7 +379,9 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getOrderButton());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getCallUsButton());
     }
 
     @Order(25)
@@ -346,7 +394,9 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getContactButton());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getAddToCartButton());
     }
 
     @Order(26)
@@ -359,8 +409,11 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getCallUsButton());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getFavouriteButton());
     }
+
 
     @Order(27)
     @Test(priority = 27)
@@ -372,7 +425,9 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getAddToCartButton());
+        productSpecificPage.checkError();
+
+        Assert.assertTrue(productSpecificPage.getRecommendationsSection());
     }
 
     @Order(28)
@@ -385,32 +440,7 @@ public class ProductSpecificTest {
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
-        Assert.assertTrue(productSpecificPage.getFavouriteButton());
-    }
-
-
-    @Order(29)
-    @Test(priority = 29)
-    public void test28() throws InterruptedException {
-        tearDown();
-        setup();
-        Thread.sleep(2000);
-
-        ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
-        productSpecificPage.open();
-
-        Assert.assertTrue(productSpecificPage.getRecommendationsSection());
-    }
-
-    @Order(30)
-    @Test(priority = 30)
-    public void test29() throws InterruptedException {
-        tearDown();
-        setup();
-        Thread.sleep(2000);
-
-        ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
-        productSpecificPage.open();
+        productSpecificPage.checkError();
 
         Assert.assertTrue(productSpecificPage.getRecommendationsItems());
     }
