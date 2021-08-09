@@ -158,7 +158,10 @@ public class ProductSpecificTest {
     @Order(11)
     @Test(priority = 11)
     public void test10() throws InterruptedException {
+        tearDown();
+        setup();
         Thread.sleep(2000);
+
         ProductSpecificPage productSpecificPage = new ProductSpecificPage(driver);
         productSpecificPage.open();
 
