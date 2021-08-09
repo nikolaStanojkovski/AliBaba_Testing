@@ -36,7 +36,7 @@ public class ProductSpecificPage extends BasePage {
             Thread.sleep(1000);
             xButton.click();
 
-            Thread.sleep(5000);
+            Thread.sleep(8000);
         } catch (Exception ignored) {
 
         }
@@ -374,13 +374,17 @@ public class ProductSpecificPage extends BasePage {
 
     public boolean getShippingPrice() {
         try {
+            driver.manage().window().maximize();
+            Thread.sleep(2500);
+
             WebElement shippingInformationSection = driver.findElement(By.xpath("//*[@id=\"module_actions\"]/div/div/ul/li[2]"));
             WebElement shippingLocation = driver.findElement(By.xpath("//*[@id=\"wholesale-tansport-selector\"]/div"));
             WebElement shippingPrice = driver.findElement(By.xpath("//*[@id=\"module_actions\"]/div/div/ul/li[2]/span[2]/span/span/span"));
+            String t = shippingPrice.getText();
 
             return shippingInformationSection != null && shippingInformationSection.isDisplayed()
                     && shippingLocation != null && shippingLocation.isDisplayed() && shippingLocation.getText().equals("Ship to Macedonia by FedEx via JYC")
-                    && shippingPrice != null && shippingPrice.isDisplayed() && shippingPrice.getText().equals("$28.34");
+                    && shippingPrice != null && shippingPrice.isDisplayed() && shippingPrice.getText().equals("$28.29");
             // check if the section with the appropriate shipping location and fee along with the appropriate information is shown
         } catch (Exception ignored) {
             return false;
