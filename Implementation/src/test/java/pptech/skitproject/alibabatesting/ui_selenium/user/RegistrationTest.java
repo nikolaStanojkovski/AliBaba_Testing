@@ -42,6 +42,7 @@ public class RegistrationTest {
         driver.quit();
     }
 
+    @Order(1)
     @Test(priority = 1)
     public void shouldOpen() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
@@ -128,7 +129,7 @@ public class RegistrationTest {
     }
 
     @Order(9)
-    @Test(priority = 0)
+    @Test(priority = 9)
     public void test8() throws InterruptedException {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.open();
