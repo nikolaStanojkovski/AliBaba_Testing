@@ -1,0 +1,23 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+https://www.amazon.de/gp/customer-preferences/ajax/icp.html?icpContent=icp&_=1631091268085,10,255,166,344,57.89,0.000%,8.49618,23.22,4.75,2798.0
+https://www.amazon.de/-/en/ap/signin?openid.pape.max_auth_age=0&openid.return_to=https%3A%2F%2Fwww.amazon.de%2Fref%3Dnav_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=deflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0&,10,494,418,564,48.52,0.000%,7.61035,2116.90,29.55,284836.4
+https://www.amazon.de/ap/signin,20,211,180,277,29.50,0.000%,1.95810,232.73,28.06,121708.9
+https://www.amazon.de/ah/ajax/counter?ctr=desktop_ajax_atf&exp=1631091547272&rId=KVJNZJSYDTE3WX2TFX2V&mkId=A1PA6795UKMFR9&h=ef400528b894629bf104a8ab8f7521869f96dcfacc0c1384752bd35351be261d,10,98,75,258,53.47,100.000%,1.42898,5.11,1.49,3660.4
+https://completion.amazon.co.uk/api/2017/suggestions?session-id=259-4159120-6926613&customer-id=AL0OCG0OIF7UR&request-id=KVJNZJSYDTE3WX2TFX2V&page-type=Gateway&lop=en_GB&site-variant=desktop&client-info=amazon-search-ui&mid=A1PA6795UKMFR9&alias=aps&searchTerm=a&suggestion-type=KEYWORD&suggestion-type=WIDGET&_=1631091283128,10,239,187,487,84.40,0.000%,1.35007,0.65,0.94,491.8
+https://unagi.amazon.de/1/events/com.amazon.csm.csa.prod,10,320,288,376,25.17,0.000%,1.33565,0.47,108.42,360.0
+https://www.amazon.de/gp/product/sessionCacheUpdateHandler.html,10,151,139,170,9.87,100.000%,1.37684,3.93,1.45,2920.2
+"https://m.media-amazon.com/images/G/03/HUD/Dashboard/ProfileCard/orders._AC_SR120,80_.png",10,70,58,94,11.49,0.000%,1.39451,1.09,0.63,800.0
+"https://m.media-amazon.com/images/G/03/HUD/Dashboard/ProfileCard/Electronics_Photo_EchoDot._AC_SR120,80_.jpg",10,12,12,14,0.66,0.000%,1.41064,1.15,0.66,838.0
+"https://m.media-amazon.com/images/G/03/HUD/Dashboard/ProfileCard/3167641._AC_SR120,80_.png",10,12,11,14,0.80,0.000%,1.41064,1.11,0.64,804.0
+"https://m.media-amazon.com/images/G/03/HUD/Dashboard/ProfileCard/340846031._AC_SR120,80_.png",10,13,12,15,1.18,0.000%,1.41064,1.11,0.64,808.0
+https://images-eu.ssl-images-amazon.com/images/G/03/DE-hq/2021/img/X_Site/XCM_CUTTLE_1313984_1615381_DE_3722946_186x116_1X_de_DE._SY116_CB657629060_.jpg,10,79,58,187,36.72,0.000%,1.39841,1.22,0.72,894.0
+https://images-eu.ssl-images-amazon.com/images/G/03/DE-hq/2021/img/X_Site/XCM_CUTTLE_1313984_1615374_DE_3723034_186x116_1X_de_DE._SY116_CB657628777_.jpg,10,13,12,17,1.43,0.000%,1.40726,1.23,0.72,894.0
+https://images-eu.ssl-images-amazon.com/images/G/03/DE-hq/2021/img/X_Site/XCM_CUTTLE_1313984_1615358_DE_3723026_186x116_1X_de_DE._SY116_CB657629060_.jpg,10,13,12,17,1.45,0.000%,1.40746,1.23,0.72,893.0
+https://images-eu.ssl-images-amazon.com/images/G/03/DE-hq/2021/img/X_Site/XCM_CUTTLE_1313984_1615373_DE_3722987_186x116_1X_de_DE._SY116_CB657629060_.jpg,10,14,12,20,2.14,0.000%,1.40746,1.23,0.72,894.0
+https://m.media-amazon.com/images/G/03/toys/Lego/EOSS_deal_image_3._AC_SY230_.jpg,10,14,11,23,3.63,0.000%,1.40786,1.09,0.63,791.0
+https://images-eu.ssl-images-amazon.com/images/G/03/mozart/2021/XCM_CUTTLE_1305636_1563018_NL_3655680_379x304_1X_nl_NL._SY304_CB659656767_.jpg,10,13,12,16,1.02,0.000%,1.40845,1.14,0.71,827.0
+https://images-na.ssl-images-amazon.com/images/I/71bCQbaYKeL._RI_AC_SL792_.jpg,10,71,58,92,8.03,0.000%,1.39762,1.07,0.62,783.0
+https://images-eu.ssl-images-amazon.com/images/G/03/MOZART/COP/XCM_Manual_1234078_1236768_DE_de_de_cop_launch_gw_de_de_3202739_379x304_de_DE._SY304_CB409241614_.jpg,10,14,13,19,2.11,0.000%,1.40845,1.23,0.74,897.0
+https://m.media-amazon.com/images/I/512nBJirzGL._SL260_.jpg,10,17,12,25,4.79,0.000%,1.40944,1.08,0.60,783.0
+Test,10,2344,2192,2765,160.69,100.000%,.65733,352.67,81.05,549390.7
+TOTAL,220,213,11,2765,483.95,13.636%,14.46132,705.34,162.10,49944.6
