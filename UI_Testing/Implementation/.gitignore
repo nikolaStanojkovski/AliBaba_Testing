@@ -3,6 +3,9 @@ bin-debug/
 bin-release/
 [Oo]bj/
 [Bb]in/
+.idea
+.mvn
+target
 
 # Other files and folders
 .settings/
