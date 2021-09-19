@@ -21,8 +21,8 @@
 
 <hr />
 
-#### The full specification and communication with other microservices is given in the <b>Documentation</b> folder
+#### The full specification and documentation for the UI testing is in the <b>UI_Testing</b> folder
 
 <hr />
 
-#### The full implementation is given in the <b>Implementation</b> folder
+#### The full specification and documentation for the Performance testing is in the <b>Performance_Testing</b> folder
